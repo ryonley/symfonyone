@@ -1,6 +1,6 @@
 <?php
 `git pull`;
 
-`(cd ../ && composer install --no-dev --optimize-autoloader)`;
+`php ../app/console doctrine:migrations:migrate`;
 
 

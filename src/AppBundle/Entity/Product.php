@@ -32,6 +32,11 @@ class Product
      */
     protected $description;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $model;
+
 
     /**
      * Get id
