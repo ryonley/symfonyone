@@ -1,6 +1,8 @@
 Symfony Standard Edition
 ========================
 
+Here is a comment
+
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
 
