@@ -1,5 +1,5 @@
 `git pull origin master`
 
-`composer self-update`
+`composer install --no-dev --optimize-autoloader`
 
-`composer update`
+
