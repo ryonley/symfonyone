@@ -1,5 +1,5 @@
 <?php
-`( cd ../ && sudo git pull origin master)`;
+`git pull`;
 
 
 
