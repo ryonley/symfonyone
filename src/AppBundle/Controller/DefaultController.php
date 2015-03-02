@@ -16,7 +16,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        // just a test
+        // just a test again
         return $this->render('default/index.html.twig');
     }
 
