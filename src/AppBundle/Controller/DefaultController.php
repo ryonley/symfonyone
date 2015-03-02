@@ -9,11 +9,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+
+
     /**
      * @Route("/app/example", name="homepage")
      */
     public function indexAction()
     {
+        // just a test
         return $this->render('default/index.html.twig');
     }
 
