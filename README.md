@@ -1,7 +1,7 @@
 Symfony Standard Edition
 ========================
 
-Howdy Yall people be chillin tonight
+Howdy Yall people be chillin tonight yeah
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
