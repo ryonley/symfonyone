@@ -1,0 +1,5 @@
+acme_user_homepage:
+    path:     /user/{name}
+    defaults: { _controller: AcmeUserBundle:Default:index }
+
+

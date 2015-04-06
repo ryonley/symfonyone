@@ -1,0 +1,35 @@
+post:
+    path:     /
+    defaults: { _controller: "ConductBlogBundle:Post:index" }
+
+post_show:
+    path:     /show/{title}
+    defaults: { _controller: "ConductBlogBundle:Post:show" }
+
+post_new:
+    path:     /new
+    defaults: { _controller: "ConductBlogBundle:Post:new" }
+
+post_create:
+    path:     /create
+    defaults: { _controller: "ConductBlogBundle:Post:create" }
+    methods:  POST
+
+post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConductBlogBundle:Post:edit" }
+
+post_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConductBlogBundle:Post:update" }
+    methods:  [POST, PUT]
+
+post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConductBlogBundle:Post:delete" }
+    methods:  [POST, DELETE]
+
+comment_create:
+    path: /createcomment
+    defaults: { _controller: "ConductBlogBundle:Post:createcomment" }
+    methods: POST

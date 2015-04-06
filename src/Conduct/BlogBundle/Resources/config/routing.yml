@@ -1,0 +1,7 @@
+conduct_blog_post:
+    resource: "@ConductBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+conduct_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ConductBlogBundle:Default:index }

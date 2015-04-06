@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('ConductBlogBundle/js/post.js') }}"></script>
+
+    {%  javascripts '@ConductBlogBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body -%}
+    <h1>Post</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Author</th>
+                <td>{{ entity.postAuthor.username }}</td>
+            </tr>
+
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ entity.content }}</td>
+            </tr>
+            <tr>
+                <th>Postdate</th>
+                <td>{{ entity.postDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('post') }}">
+            Back to the list
+        </a>
+    </li>
+     {% if is_granted('ROLE_ADMIN') %}
+    <li>
+        <a href="{{ path('post_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+     {% endif %}
+</ul>
+
+    <div class='comments_container'>
+    {% for entity in comments %}
+       {{ include('ConductBlogBundle:Post:comment.html.twig', {'comment': entity}) }}
+    {% endfor %}
+    </div>
+    {{ form(comment_form, {'attr': {'novalidate': 'novalidate'}}) }}
+{% endblock %}

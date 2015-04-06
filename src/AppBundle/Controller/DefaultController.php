@@ -22,6 +22,60 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/test")
+     */
+    public function testAction()
+    {
+        /*
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+        */
+
+        $user = $this->getUser();
+
+        //$roles = $user->getRoles();
+        //var_dump($roles);
+
+        if($this->get('security.context')->isGranted('ROLE_USER'))
+        {
+            echo "User is logged in";
+        }
+
+
+
+
+        echo "<br/>";
+
+
+        echo "<pre>";
+        var_dump($user);
+        echo "</pre>";
+
+        return new Response('test page');
+    }
+
+    /**
+     * @Route("/admin")
+     */
+    public function adminAction()
+    {
+       /* echo "<pre>";
+        var_dump($_SESSION);
+        echo "</pre>";*/
+        /*
+        $user_manager = $this->container->get('fos_user.user_manager');
+        $user = $user_manager->getUser();
+        $roles = $user->getRoles();*/
+
+        $user = $this->getUser();
+        $roles = $user->getRoles();
+        var_dump($roles);
+        return new Response('Admin page!');
+    }
+
+    /**
      * @Route("/app/createproduct")
      */
     public function createAction()

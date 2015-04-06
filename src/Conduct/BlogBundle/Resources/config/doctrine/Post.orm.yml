@@ -1,0 +1,36 @@
+Conduct\BlogBundle\Entity\Post:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '255'
+        content:
+            type: text
+        postDate:
+            type: datetime
+            column: post_date
+        postExcerpt:
+            type: string
+            length: '255'
+            column: post_excerpt
+        postStatus:
+            type: integer
+            column: post_status
+        postModified:
+            type: datetime
+            column: post_modified
+    oneToMany:
+        comments:
+            targetEntity: Comment
+            mappedBy: post
+    manyToOne:
+        postAuthor:
+            targetEntity: Acme\UserBundle\Entity\User
+    lifecycleCallbacks: {  }
