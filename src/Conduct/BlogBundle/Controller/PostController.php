@@ -83,7 +83,7 @@ class PostController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('post_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('post_show', array('title' => $entity->getPermalink())));
         }
 
         return $this->render('ConductBlogBundle:Post:new.html.twig', array(
@@ -205,7 +205,7 @@ class PostController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-
+        $title = str_replace('-', ' ', $title);
 
         $entity = $em->getRepository('ConductBlogBundle:Post')->findOneBy(array('title' => $title));
         $id = $entity->getId();

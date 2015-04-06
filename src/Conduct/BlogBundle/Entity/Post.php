@@ -93,6 +93,11 @@ class Post
         return $this->title;
     }
 
+    public function getPermalink()
+    {
+        return str_replace(' ', '-', $this->title);
+    }
+
 
 
     /**
