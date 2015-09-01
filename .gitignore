@@ -5,3 +5,7 @@
 /vendor/
 /app/config/parameters.yml
 .idea/
+.project
+.buildpath
+db.sql
+.settings/*
