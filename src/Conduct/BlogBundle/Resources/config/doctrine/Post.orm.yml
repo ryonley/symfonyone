@@ -1,6 +1,6 @@
 Conduct\BlogBundle\Entity\Post:
     type: entity
-    table: null
+    table: Post
     id:
         id:
             type: integer
@@ -9,6 +9,9 @@ Conduct\BlogBundle\Entity\Post:
                 strategy: AUTO
     fields:
         title:
+            type: string
+            length: '255'
+        name:
             type: string
             length: '255'
         content:
@@ -28,9 +31,25 @@ Conduct\BlogBundle\Entity\Post:
             column: post_modified
     oneToMany:
         comments:
-            targetEntity: Comment
+            targetEntity: Conduct\BlogBundle\Entity\Comment
+            mappedBy: post
+    oneToMany:
+        postmetas:
+            targetEntity: Conduct\BlogBundle\Entity\Postmeta
             mappedBy: post
     manyToOne:
-        postAuthor:
+        category:
+             targetEntity: Conduct\BlogBundle\Entity\Category
+             inversedBy: posts
+             joinColumn:
+                 name: category_id
+                 referencedColumnName: id
+        user:
             targetEntity: Acme\UserBundle\Entity\User
+            inversedBy: posts
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+
+
     lifecycleCallbacks: {  }

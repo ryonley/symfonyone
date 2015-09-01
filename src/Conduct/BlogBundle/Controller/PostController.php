@@ -24,6 +24,7 @@ class PostController extends Controller
      */
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         ///
@@ -78,7 +79,7 @@ class PostController extends Controller
 
             $entity->setPostModified($date_time);
 
-            $entity->setPostAuthor($this->getUser());
+            $entity->setUser($this->getUser());
 
             $em->persist($entity);
             $em->flush();

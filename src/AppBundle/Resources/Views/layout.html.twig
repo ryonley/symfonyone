@@ -1,0 +1,865 @@
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google fonts - witch you want to use - (rest you can just remove) -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- ######### CSS STYLES ######### -->
+
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/reset.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" type="text/css" />
+
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/font-awesome/css/font-awesome.min.css') }}">
+
+    <!-- simple line icons -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/simpleline-icons/simple-line-icons.css') }}" media="screen" />
+
+    <!-- animations -->
+    <!--<link href="{{ asset('bundles/app/js/animations/css/animations.min.css') }}" rel="stylesheet" type="text/css" media="all" /> -->
+
+    <!-- responsive devices styles -->
+    <link rel="stylesheet" media="screen" href="{{ asset('bundles/app/css/responsive-leyouts.css') }}" type="text/css" />
+
+    <!-- shortcodes -->
+    <!--<link rel="stylesheet" media="screen" href="{{ asset('bundles/app/css/shortcodes.css') }}" type="text/css" />-->
+
+
+    <!-- just remove the below comments witch color skin you want to use -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/colors/blue.css') }}" />
+    <!--<link rel="stylesheet" href="{{ asset('bundles/app/css/colors/green.css') }}" />-->
+    <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/pink.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/bridge.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/slate.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/yellow.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/darkred.css" />-->
+
+    <!-- just remove the below comments witch bg patterns you want to use -->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-default.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-one.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-two.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-three.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-four.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-five.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-six.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-seven.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-eight.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-nine.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-ten.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-eleven.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-twelve.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-thirteen.css" />-->
+
+    <!-- style switcher -->
+    <link rel = "stylesheet" media = "screen" href = " {{ asset('bundles/app/js/style-switcher/color-switcher.css') }}" />
+
+    <!-- mega menu -->
+    <link href="{{ asset('bundles/app/js/mainmenu/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/js/mainmenu/menu-2.css') }}" rel="stylesheet">
+
+    <!-- slide panel -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/js/slidepanel/slidepanel.css') }}">
+
+
+    <!-- MasterSlider -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/js/masterslider/style/masterslider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/js/masterslider/skins/default/style.css') }}" />
+
+    <!-- owl carousel -->
+    <link href="{{ asset('bundles/app/js/carouselowl/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/js/carouselowl/owl.carousel.css') }}" rel="stylesheet">
+
+    <!-- icon hover -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/js/iconhoverefs/component.css') }}" />
+
+    <!-- basic slider -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/js/basicslider/bacslider.css') }}" />
+
+    <!-- cubeportfolio -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/js/cubeportfolio/cubeportfolio.min.css') }}">
+
+
+    <!-- flexslider -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/js/flexslider/flexslider.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/js/flexslider/skin.css') }}" />
+
+    <!-- tabs -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/tabs/assets/css/responsive-tabs3.css') }}">
+
+    <!-- accordion -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/tabs/js/accordion/style.css') }}" />
+
+    <!-- forms -->
+    <link rel="stylesheet" href="{{ asset('bundles/tabs/js/form/sky-forms.css') }}" type="text/css" media="all">
+
+    <!-- image hover effects
+  	<link rel="stylesheet" href="js/ihovereffects/main.css">-->
+
+
+
+{% endblock %}
+
+{% block title 'Testing' %}
+
+{% block body %}
+
+    <div class="site_wrapper">
+
+        <header class="header">
+
+            <div class="container">
+
+                <!-- Logo -->
+                <div class="logo"><h3 class="white">codeConductor</h3></div>
+
+                <!-- Navigation Menu -->
+                <nav class="menu_main">
+
+                    <div class="navbar yamm navbar-default">
+
+                        <div class="container">
+                            <div class="navbar-header">
+                                <div class="navbar-toggle .navbar-collapse .pull-right " data-toggle="collapse" data-target="#navbar-collapse-1"  > <span>Menu</span>
+                                    <button type="button" > <i class="fa fa-bars"></i></button>
+                                </div>
+                            </div>
+
+                            <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
+
+                                <ul class="nav navbar-nav">
+
+                                    <li class="dropdown yamm-fw"><a href="index.html" data-toggle="dropdown" class="dropdown-toggle active">Home</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>Header Styles</p>
+                                                            </li>
+                                                            <li><a href="index1.html"><i class="fa fa-caret-right"></i> Header Style 1</a></li>
+                                                            <li><a href="index2.html"><i class="fa fa-caret-right"></i> Header Style 2</a></li>
+                                                            <li><a href="index3.html"><i class="fa fa-caret-right"></i> Header Style 3</a></li>
+                                                            <li><a href="index4.html"><i class="fa fa-caret-right"></i> Header Style 4</a></li>
+                                                            <li><a href="index5.html"><i class="fa fa-caret-right"></i> Header Style 5</a></li>
+                                                            <li><a href="index6.html"><i class="fa fa-caret-right"></i> Header Style 6</a></li>
+                                                            <li><a href="index.html"><i class="fa fa-caret-right"></i> Header Style 7</a></li>
+                                                            <li><a href="index10.html"><i class="fa fa-caret-right"></i> Header Style 8</a></li>
+                                                            <li><a href="index11.html"><i class="fa fa-caret-right"></i> Header Style 9</a><b class="mitemnew">New</b></li>
+                                                            <li><a href="http://gsrthemes.com/aaika/onepage/index.html"><i class="fa fa-caret-right"></i> One Page Theme</a><b class="mitemnew">New</b></li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>Home Page Styles</p>
+                                                            </li>
+                                                            <li><a href="index-layout1.html"><i class="fa fa-caret-right"></i> Home Layout 1</a></li>
+                                                            <li><a href="index-layout2.html"><i class="fa fa-caret-right"></i> Home Layout 2</a></li>
+                                                            <li><a href="index-layout3.html"><i class="fa fa-caret-right"></i> Home Layout 3</a></li>
+                                                            <li><a href="index-layout4.html"><i class="fa fa-caret-right"></i> Home Layout 4</a></li>
+                                                            <li><a href="index-layout5.html"><i class="fa fa-caret-right"></i> Home Layout 5</a></li>
+                                                            <li><a href="index-layout6.html"><i class="fa fa-caret-right"></i> Home Layout 6</a></li>
+                                                            <li><a href="index-layout7.html"><i class="fa fa-caret-right"></i> Home Layout 7</a></li>
+                                                            <li><a href="index-layout8.html"><i class="fa fa-caret-right"></i> Home Layout 8</a></li>
+                                                            <li><a href="index-layout9.html"><i class="fa fa-caret-right"></i> Home Layout 9</a></li>
+                                                            <li><a href="index-layout10.html"><i class="fa fa-caret-right"></i> Home Layout 10</a></li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>&nbsp;</p>
+                                                            </li>
+                                                            <li><a href="index-layout11.html"><i class="fa fa-caret-right"></i> Home Layout 11</a></li>
+                                                            <li><a href="index-layout12.html"><i class="fa fa-caret-right"></i> Home Layout 12</a></li>
+                                                            <li><a href="index-layout13.html"><i class="fa fa-caret-right"></i> Home Layout 13</a></li>
+                                                            <li><a href="index.html"><i class="fa fa-caret-right"></i> Home Layout 14</a></li>
+                                                            <li><a href="index10.html"><i class="fa fa-caret-right"></i> Text Slider</a><b class="mitemnew">New</b></li>
+                                                            <li><a href="index9.html"><i class="fa fa-caret-right"></i> Header with Portfolio</a><b class="mitemnew">New</b></li>
+                                                            <li><a href="index7.html"><i class="fa fa-caret-right"></i> Slider with Form</a><b class="mitemnew">New</b></li>
+                                                            <li><a href="index8.html"><i class="fa fa-caret-right"></i> Form in Header</a><b class="mitemnew">New</b></li>
+
+                                                        </ul>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+                                        <ul class="dropdown-menu stwo multilevel" role="menu">
+                                            <li><a href="about.html">About Style 1</a></li>
+                                            <li><a href="about2.html">About Style 2</a></li>
+                                            <li><a href="about3.html">About Style 3</a></li>
+                                            <li><a href="about4.html">About Style 4</a></li>
+                                            <li><a href="about5.html">About Style 5</a></li>
+                                            <li><a href="services.html">Services Style 1</a></li>
+                                            <li><a href="services2.html">Services Style 2</a></li>
+                                            <li><a href="services3.html">Services Style 3</a></li>
+                                            <li><a href="services4.html">Services Style 4</a></li>
+                                            <li><a href="services5.html">Services Style 5</a></li>
+                                            <li><a href="team.html">Our Team Style 1</a></li>
+                                            <li><a href="team2.html">Our Team Style 2</a></li>
+                                            <li><a href="team3.html">Our Team Style 3</a></li>
+                                            <li class="dropdown-submenu mul"> <a tabindex="-1" href="#">Multi Level Submenu +</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Menu Item 1</a></li>
+                                                    <li><a href="#">Menu Item 2</a></li>
+                                                    <li><a href="#">Menu Item 3</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sliders</a>
+                                        <ul class="dropdown-menu stwo multilevel" role="menu">
+                                            <li><a href="index1.html">Slider Style 1</a></li>
+                                            <li><a href="index5.html">Slider Style 2</a></li>
+                                            <li><a href="index4.html">Slider Style 3</a></li>
+                                            <li><a href="index-layout14.html">Slider Style 4</a></li>
+                                            <li><a href="index10.html">Slider Style 5</a></li>
+                                            <li><a href="index11.html">Slider Style 6</a></li>
+                                            <li><a href="index8.html">Slider Style 7</a></li>
+                                            <li><a href="index9.html">Slider Style 8</a></li>
+                                            <li><a href="index7.html">Slider Style 9</a></li>
+                                            <li><a href="index.html">Slider Style 10</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown yamm-fw"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">Features</a>
+                                        <ul class="dropdown-menu stwo">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>Useful Pages</p>
+                                                            </li>
+                                                            <li><a href="left-sidebar.html"><i class="fa fa-angle-right"></i>Left Sidebar</a></li>
+                                                            <li><a href="right-sidebar.html"><i class="fa fa-angle-right"></i>Right Sidebar</a></li>
+                                                            <li><a href="left-nav.html"><i class="fa fa-angle-right"></i>Left Navigation</a></li>
+                                                            <li><a href="right-nav.html"><i class="fa fa-angle-right"></i>Right Navigation</a></li>
+                                                            <li><a href="login.html"><i class="fa fa-angle-right"></i>Login Form</a></li>
+                                                            <li><a href="register.html"><i class="fa fa-angle-right"></i>Registration Form</a></li>
+                                                            <li><a href="404.html"><i class="fa fa-angle-right"></i>404 Error Page</a></li>
+                                                            <li><a href="faq.html"><i class="fa fa-angle-right"></i>FAQs Page</a></li>
+                                                            <li><a href="video-bg.html"><i class="fa fa-angle-right"></i>Video Backgrounds</a></li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>Diffrent Websites</p>
+                                                            </li>
+                                                            <li><a href="coming-soon.html" target="_blank"><i class="fa fa-angle-right"></i>Coming Soon</a></li>
+                                                            <li><a href="history.html"><i class="fa fa-angle-right"></i>History Timeline</a></li>
+                                                            <li><a href="index-layout14.html"><i class="fa fa-angle-right"></i>Video BG Slider</a></li>
+                                                            <li><a href="template17.html"><i class="fa fa-angle-right"></i>Header Styles</a></li>
+                                                            <li><a href="template18.html"><i class="fa fa-angle-right"></i>Footer Styles</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Masonry Gallerys</a> </li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Parallax Backgrounds</a> </li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Background Videos</a> </li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Create your Own</a> </li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>More Features</p>
+                                                            </li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Mega Menu</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Diffrent Websites</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Cross Browser Check</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Premium Sliders</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Diffrent Slide Shows</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Video BG Effects</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>100+ Feature Sections</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Use for any Website</a></li>
+                                                            <li><a href="#"><i class="fa fa-angle-right"></i>Free Updates</a></li>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Portfolio</a>
+                                        <ul class="dropdown-menu stwo" role="menu">
+                                            <li> <a href="portfolio-1.html">Single Item</a> </li>
+                                            <li> <a href="portfolio-5.html">Portfolio Masonry</a> </li>
+                                            <li> <a href="portfolio-4.html">Portfolio Columns 4</a> </li>
+                                            <li> <a href="portfolio-3.html">Portfolio Columns 3</a> </li>
+                                            <li> <a href="portfolio-2.html">Portfolio Columns 2</a> </li>
+                                            <li> <a href="portfolio-6.html">Portfolio + Sidebar</a> </li>
+                                            <li> <a href="portfolio-7.html">Portfolio Full Width</a> </li>
+                                            <li> <a href="portfolio-8.html">Image Gallery</a> </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog </a>
+                                        <ul class="dropdown-menu stwo multilevel" role="menu">
+                                            <li> <a href="blog-4.html">With Masonry</a> </li>
+                                            <li> <a href="blog.html">With Large Image</a> </li>
+                                            <li> <a href="blog-2.html">With Medium Image</a> </li>
+                                            <li> <a href="blog-3.html">With Small Image</a> </li>
+                                            <li> <a href="blog-post.html">Single Post</a> </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown yamm-fw"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">Shortcodes</a>
+                                        <ul class="dropdown-menu stwo">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li><a href="template1.html"><i class="fa fa-plus-square"></i> Accordion &amp; Toggle</a></li>
+                                                            <li><a href="template2.html"><i class="fa fa-leaf"></i> Title Styles</a></li>
+                                                            <li><a href="template3.html"><i class="fa fa-bars"></i> List of Dividers</a></li>
+                                                            <li><a href="template4.html"><i class="fa fa-exclamation-triangle"></i> Boxes Alert</a></li>
+                                                            <li><a href="template5.html"><i class="fa fa-hand-o-up"></i> List of Buttons</a></li>
+                                                            <li><a href="template6.html"><i class="fa fa-cog"></i> Carousel Sliders</a></li>
+                                                            <li><a href="template7.html"><i class="fa fa-file-text"></i> Page Columns</a></li>
+                                                            <li><a href="template8.html"><i class="fa fa-rocket"></i> Animated Counters</a></li>
+                                                            <li><a href="template17.html"><i class="fa fa-question"></i> Faqs Page</a></li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li><a href="template9.html"><i class="fa fa-pie-chart"></i> Pie Charts</a></li>
+                                                            <li><a href="template10.html"><i class="fa fa-flag"></i> Font Icons</a></li>
+                                                            <li><a href="template11.html"><i class="fa fa-umbrella"></i> Flip Boxes</a></li>
+                                                            <li><a href="template12.html"><i class="fa fa-picture-o"></i> Image Frames</a></li>
+                                                            <li><a href="template13.html"><i class="fa fa-table"></i> Pricing Tables</a></li>
+                                                            <li><a href="template14.html"><i class="fa fa-line-chart"></i> Progress Bars</a></li>
+                                                            <li><a href="template15.html"><i class="fa fa-toggle-on"></i> List of Tabs</a></li>
+                                                            <li><a href="template16.html"><i class="fa fa-paper-plane"></i> Popover &amp; Tooltip</a></li>
+                                                            <li><a href="template18.html"><i class="fa fa-play-circle"></i> Video Backgrounds</a></li>
+                                                        </ul>
+
+                                                        <ul class="col-sm-6 col-md-4 list-unstyled two">
+                                                            <li>
+                                                                <p>About Website</p>
+                                                            </li>
+                                                            <li class="dart">
+                                                                <img src="images/inmenu-img1.png" alt="" class="rimg marb1" />
+                                                                There are many variations passages available the majority have alteration in some form, by injected humour on randomised words if you are going to use a passage of lorem anything.
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Contact</a>
+                                        <ul class="dropdown-menu stwo two" role="menu">
+                                            <li> <a href="contact.html">Contact Style 1</a> </li>
+                                            <li> <a href="contact2.html">Contact Style 2</a> </li>
+                                            <li> <a href="contact3.html">Contact Style 3</a> </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </nav><!-- end Navigation Menu -->
+
+                <div class="menu_right"><a href="#" class="buynow">Buy Now</a></div>
+
+            </div>
+
+        </header>
+
+        <div class="clearfix"></div>
+
+        <!-- Slider
+        ======================================= -->
+        <div class="stheader2">
+            <div class="container">
+
+                <div class="headerport">
+
+                    <h2 class="white animate" data-anim-type="fadeInUp" data-anim-delay="300">These are a few of my favorite things</h2>
+                    <h6 class="white light animate" data-anim-type="fadeInUp" data-anim-delay="400"></h6>
+
+                    <div class="clearfix marb4"></div>
+
+
+                    <div class="left">
+
+                        <div class="boxsize1 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/postgresql-elephant-dark.png') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>18 Different Home Pages</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize3 animate" data-anim-type="fadeInLeft" data-anim-delay="600">
+                            <div class="onlycolor">
+
+                                <h3>Parallax Backgrounds</h3>
+
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize3 animate" data-anim-type="fadeInDown" data-anim-delay="500">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/symfony1.png') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>Masonry Gallerys</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+
+                    </div><!-- end left items -->
+
+
+                    <div class="center">
+
+                        <div class="boxsize2 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/phpimage2.jpg') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>One Page Theme</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize2 animate" data-anim-type="fadeInRight" data-anim-delay="500">
+                            <div class="onlycolor">
+
+                                <h3>Mega Menu</h3>
+
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize3 animate" data-anim-type="zoomIn" data-anim-delay="600">
+                            <div class="onlycolor white">
+
+                                <h3 class="darkc">Tons of Features &amp; Elements</h3>
+
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize1 animate" data-anim-type="fadeInDown" data-anim-delay="500">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/html5.jpg') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>Video Backgrounds</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+                    </div><!-- end center items -->
+
+
+                    <div class="right">
+
+                        <div class="boxsize4 animate" data-anim-type="fadeInUp" data-anim-delay="600">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/sql4.jpg') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>7 Different Header Styles</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize2 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+                            <div class="onlycolor white">
+
+                                <img src="/bundles/app/images/conductor.jpg" alt="conductorguy">
+
+                            </div>
+                        </div><!-- end item -->
+
+                        <div class="boxsize2 animate" data-anim-type="zoomIn" data-anim-delay="500">
+                            <div class="hp-item square effect10 bottom_to_top">
+                                <a href="#">
+                                    <div class="img"><img src="{{ asset('bundles/app/images/javascript2.jpg') }}" alt=""></div>
+                                    <div class="info">
+                                        <h3>Coming Soon Page</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- end item -->
+
+                    </div><!-- end right items -->
+
+                </div>
+
+
+            </div>
+        </div><!-- end slider -->
+
+        <div class="clearfix"></div>
+
+        <div class="features_sec30">
+            <div class="container">
+
+                <div class="one_third">
+
+                    <div class="left"><span aria-hidden="true" class="icon-cursor"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Several Design Options</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                    <div class="clearfix margin_top7"></div>
+
+                    <div class="left"><span aria-hidden="true" class="icon-basket-loaded"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Build Owne Website</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                </div><!-- end section -->
+
+                <div class="one_third">
+
+                    <div class="left"><span aria-hidden="true" class="icon-badge"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Clean &amp; Modern Design</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                    <div class="clearfix margin_top7"></div>
+
+                    <div class="left"><span aria-hidden="true" class="icon-social-dropbox"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Useful Shortcodes</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                </div><!-- end section -->
+
+                <div class="one_third last">
+
+                    <div class="left"><span aria-hidden="true" class="icon-settings"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Icon Fonts Easy to Use</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                    <div class="clearfix margin_top7"></div>
+
+                    <div class="left"><span aria-hidden="true" class="icon-bulb"></span></div>
+
+                    <div class="right">
+                        <h5 class="light">Useful Shortcodes</h5>
+                        <p>Many desktop publishing packages and web page editors now use Ipsum their defau mode various versions have over the years.</p>
+                    </div><!-- end section -->
+
+                </div><!-- end section -->
+
+            </div>
+        </div><!-- end features section 30 -->
+
+
+
+
+
+
+
+
+        <div class="clearfix"></div>
+
+        <div class="parallax_section4">
+            <div class="container">
+
+                <h2>Great Value to Get the Aaika Theme on TF Only.</h2>
+
+                <p>Packages and web page editors search versions have over the years sometimes.</p>
+
+                <a href="#" class="button transp2">Read More</a>
+
+            </div>
+        </div><!-- end parallax section 4 -->
+
+        <div class="clearfix"></div>
+
+        <div class="features_sec4">
+            <div class="container">
+
+                <div class="onecol_sixty">
+
+                    <h3 class="unline"><i class="fa fa-comments"></i> Latest Blogs</h3>
+
+                    <div class="clearfix"></div>
+
+                    <div class="lblogs">
+
+                        <div class="lbimg"><img src="images/site-img7.jpg" alt="" /> <span><strong>DEC</strong> 14</span> </div>
+
+                        <h5>Have evolved many web sites</h5>
+
+                        <a href="#" class="smlinks"><i class="fa fa-eye"></i> 45</a>
+                        <a href="#" class="smlinks"><i class="fa fa-comment"></i> 18</a>
+                        <a href="#" class="smlinks"><i class="fa fa-heart"></i> 89</a>
+
+                        <p>Lorem Ipsum which looks reasonable the generated Ipsum therefore always.</p>
+
+                        <a href="#" class="remobut">Read More</a>
+
+                    </div><!-- end section -->
+
+                    <div class="lblogs last">
+
+                        <div class="lbimg"><img src="images/site-img8.jpg" alt="" /> <span><strong>DEC</strong> 13</span> </div>
+
+                        <h5>Desktop publishing packages</h5>
+
+                        <a href="#" class="smlinks"><i class="fa fa-eye"></i> 25</a>
+                        <a href="#" class="smlinks"><i class="fa fa-comment"></i> 3</a>
+                        <a href="#" class="smlinks"><i class="fa fa-heart"></i> 10</a>
+
+                        <p>Lorem Ipsum which looks reasonable the generated Ipsum therefore always.</p>
+
+                        <a href="#" class="remobut">Read More</a>
+
+                    </div><!-- end section -->
+
+                </div><!-- end all sections -->
+
+                <div class="onecol_forty last">
+
+                    <div class="peosays">
+
+                        <h3 class="unline"><i class="fa fa-users"></i> What People Says</h3>
+
+                        <div class="clearfix"></div>
+
+                        <div id="owl-demo11" class="owl-carousel small four">
+
+                            <div class="box">
+
+                                <div class="ppimg"><img src="images/site-img9.jpg" alt="" /> <h6>Kelvin Leonard <em>www.websitenames.com</em></h6></div>
+
+                                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy generators on the versions have evolved over the years.</p>
+
+                                <span> Rating: &nbsp; <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+
+                            </div><!-- end slide -->
+
+                            <div class="box">
+
+                                <div class="ppimg"><img src="images/site-img10.jpg" alt="" /> <h6>Maci Cameron <em>www.websitenames.com</em></h6></div>
+
+                                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy generators on the versions have evolved over the years.</p>
+
+                                <span> Rating: &nbsp; <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+
+                            </div><!-- end slide -->
+
+                            <div class="box">
+
+                                <div class="ppimg"><img src="images/site-img11.jpg" alt="" /> <h6>Bruce Anderson <em>www.websitenames.com</em></h6></div>
+
+                                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy generators on the versions have evolved over the years.</p>
+
+                                <span> Rating: &nbsp; <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+
+                            </div><!-- end slide -->
+
+                            <div class="box">
+
+                                <div class="ppimg"><img src="images/site-img12.jpg" alt="" /> <h6>Katy Elizabeth <em>www.websitenames.com</em></h6></div>
+
+                                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy generators on the versions have evolved over the years.</p>
+
+                                <span> Rating: &nbsp; <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+
+                            </div><!-- end slide -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div><!-- end features section 4 -->
+
+        <div class="clearfix"></div>
+
+        <footer class="footer style2">
+
+            <div class="container">
+
+                <div class="one_fourth">
+
+                </div><!-- end links -->
+
+                <div class="one_fourth">
+
+
+                </div><!-- end address -->
+
+
+                <div class="one_fourth">
+
+
+                </div><!-- end site info -->
+
+                <div class="one_fourth last">
+
+
+
+
+                </div><!-- end about -->
+
+            </div><!-- end footer -->
+
+            <div class="clearfix"></div>
+
+            <div class="copyright_info two">
+                <div class="container">
+
+                    <div class="clearfix divider_dashed10"></div>
+
+                    <div class="one_half animate" data-anim-type="fadeInRight">
+
+                        Copyright © 2014 Aaika.com. All rights reserved.  <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+
+                    </div>
+
+                    <div class="one_half last">
+
+                        <ul class="footer_social_links two">
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-flickr"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-html5"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li class="animate" data-anim-type="zoomIn"><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div><!-- end copyright info -->
+
+
+        </footer>
+
+
+        <a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
+
+
+        <!-- style switcher -->
+        <script type="text/javascript" src="js/style-switcher/styleswitcher.js"></script>
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="blue" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/green.css" title="green" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/cyan.css" title="cyan" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/orange.css" title="orange" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/lightblue.css" title="lightblue" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/pink.css" title="pink" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/purple.css" title="purple" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/bridge.css" title="bridge" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/slate.css" title="slate" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" />
+        <link rel="alternate stylesheet" type="text/css" href="css/colors/darkred.css" title="darkred" />
+
+
+
+
+    </div>
+
+
+
+    <!-- ######### JS FILES ######### -->
+    <!-- get jQuery from the google apis -->
+    <script type="text/javascript" src="{{ asset('bundles/app/js/universal/jquery.js') }}"></script>
+
+    <!-- style switcher -->
+    <script src="{{ asset('bundles/app/js/style-switcher/jquery-1.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/style-switcher/styleselector.js') }}"></script>
+
+    <!-- animations -->
+    <script src="{{ asset('bundles/app/js/animations.min.js') }}" type="text/javascript"></script>
+
+    <!-- slide panel -->
+    <script type="text/javascript" src="{{ asset('bundles/app/js/slidepanel/slidepanel.js') }}"></script>
+
+    <!-- mega menu -->
+    <script src="{{ asset('bundles/app/js/mainmenu/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/mainmenu/customeUI.js') }}"></script>
+
+    <!-- MasterSlider -->
+    <script src="{{ asset('bundles/app/js/masterslider/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/masterslider/masterslider.min.js') }}"></script>
+
+    <script type="text/javascript">
+        (function($) {
+            "use strict";
+
+            var slider = new MasterSlider();
+            // adds Arrows navigation control to the slider.
+            slider.control('arrows');
+            slider.control('bullets');
+
+            slider.setup('masterslider' , {
+                width:1400,    // slider standard width
+                height:750,   // slider standard height
+                space:0,
+                speed:45,
+                layout:'fullwidth',
+                loop:true,
+                preload:0,
+                autoplay:true,
+                view:"basic"
+            });
+
+        })(jQuery);
+    </script>
+    <!-- scroll up -->
+    <script src="{{ asset('bundles/app/js/scrolltotop/totop.js') }}" type="text/javascript"></script>
+
+    <!-- sticky menu -->
+    <script type="text/javascript" src="{{ asset('bundles/app/js/mainmenu/sticky-main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/mainmenu/modernizr.custom.75180.js') }}"></script>
+{% endblock %}

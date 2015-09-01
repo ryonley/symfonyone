@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'AppBundle::base.html.twig' %}
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('ConductBlogBundle/js/post.js') }}"></script>
@@ -15,7 +15,7 @@
         <tbody>
             <tr>
                 <th>Author</th>
-                <td>{{ entity.postAuthor.username }}</td>
+                <td>{{ entity.user.username }}</td>
             </tr>
 
             <tr>

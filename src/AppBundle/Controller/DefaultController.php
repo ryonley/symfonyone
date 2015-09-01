@@ -11,14 +11,11 @@ class DefaultController extends Controller
 {
 
 
-    /**
-     * @Route("/app/example", name="homepage")
-     */
+
     public function indexAction()
     {
         // all new original comment
-
-        return $this->render('default/index.html.twig');
+        return $this->render('AppBundle:Default:index.html.twig', array( ));
     }
 
     /**

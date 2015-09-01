@@ -3,15 +3,15 @@ post:
     defaults: { _controller: "ConductBlogBundle:Post:index" }
 
 post_show:
-    path:     /show/{title}
+    path:     /{title}
     defaults: { _controller: "ConductBlogBundle:Post:show" }
 
 post_new:
-    path:     /new
+    path:     /post/new
     defaults: { _controller: "ConductBlogBundle:Post:new" }
 
 post_create:
-    path:     /create
+    path:     /post/create
     defaults: { _controller: "ConductBlogBundle:Post:create" }
     methods:  POST
 
@@ -30,6 +30,6 @@ post_delete:
     methods:  [POST, DELETE]
 
 comment_create:
-    path: /createcomment
+    path: /post/createcomment
     defaults: { _controller: "ConductBlogBundle:Post:createcomment" }
     methods: POST

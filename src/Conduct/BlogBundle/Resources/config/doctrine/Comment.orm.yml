@@ -1,6 +1,6 @@
 Conduct\BlogBundle\Entity\Comment:
     type: entity
-    table: null
+    table: Comment
     id:
         id:
             type: integer
@@ -34,5 +34,6 @@ Conduct\BlogBundle\Entity\Comment:
             length: '20'
     manyToOne:
         post:
-            targetEntity: Post
+            targetEntity: Conduct\BlogBundle\Entity\Post
+
     lifecycleCallbacks: {  }

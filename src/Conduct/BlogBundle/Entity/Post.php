@@ -27,6 +27,8 @@ class Post
      */
     private $title;
 
+    private $name;
+
     /**
      * @var string
      */
@@ -46,15 +48,41 @@ class Post
 
     private $postModified;
 
-    private $postAuthor;
+    private $user;
 
 
-
+    protected $postmetas;
     protected $comments;
+
+    protected $category;
+
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function getCommentsCount()
+    {
+        return $this->comments->count();
+    }
+
+    /**
+     * @param ArrayCollection $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->postmetas = new ArrayCollection();
     }
 
 
@@ -92,6 +120,24 @@ class Post
     {
         return $this->title;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+
 
     public function getPermalink()
     {
@@ -201,6 +247,57 @@ class Post
     public function getPostAuthor()
     {
         return $this->postAuthor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getPostmeta()
+    {
+        return $this->postmeta;
+    }
+
+    /**
+     * @param ArrayCollection $postmeta
+     */
+    public function setPostmeta($postmeta)
+    {
+        $this->postmeta = $postmeta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 
 

@@ -1,0 +1,21 @@
+Conduct\BlogBundle\Entity\Category:
+    type: entity
+    table: Category
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+    oneToMany:
+            posts:
+                targetEntity: Conduct\BlogBundle\Entity\Post
+                mappedBy: category
+    lifecycleCallbacks: {  }

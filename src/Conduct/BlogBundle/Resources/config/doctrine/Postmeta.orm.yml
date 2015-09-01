@@ -1,0 +1,23 @@
+Conduct\BlogBundle\Entity\Postmeta:
+    type: entity
+    table: Postmeta
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        metaKey:
+            type: string
+            length: '255'
+            column: meta_key
+        metaValue:
+            type: string
+            length: '255'
+            column: meta_value
+
+    manyToOne:
+        post:
+            targetEntity: Conduct\BlogBundle\Entity\Post
+    lifecycleCallbacks: {  }
