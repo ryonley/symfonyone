@@ -1,4 +1,4 @@
-
+{% extends "AppBundle::layout.html.twig" %}
 
 {% block title "This is a test test test" %}
 
@@ -6,10 +6,122 @@
 
 
 {% block content %}
-    <h1 class="title">Available demos</h1>
-    <ul id="demo-list">
-        <li><a href="{{ path('_demo_hello', {'name': 'World'}) }}">Hello World</a></li>
-        <li><a href="{{ path('_demo_secured_hello', {'name': 'World'}) }}">Access the secured area</a> <a href="{{ path('_demo_login') }}">Go to the login page</a></li>
-        {# <li><a href="{{ path('_demo_contact') }}">Send a Message</a></li> #}
-    </ul>
+    <h2 class="white animate" data-anim-type="fadeInUp" data-anim-delay="300">These are a few of my favorite things</h2>
+    <h6 class="white light animate" data-anim-type="fadeInUp" data-anim-delay="400"></h6>
+
+    <div class="clearfix marb4"></div>
+
+
+    <div class="left">
+
+        <div class="boxsize1 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/postgresql-elephant-dark.png') }}" alt=""></div>
+                    <div class="info">
+                        <h3>18 Different Home Pages</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize3 animate" data-anim-type="fadeInLeft" data-anim-delay="600">
+            <div class="onlycolor">
+
+                <h3>Parallax Backgrounds</h3>
+
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize3 animate" data-anim-type="fadeInDown" data-anim-delay="500">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/symfony1.png') }}" alt=""></div>
+                    <div class="info">
+                        <h3>Masonry Gallerys</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+
+    </div><!-- end left items -->
+
+
+    <div class="center">
+
+        <div class="boxsize2 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/phpimage2.jpg') }}" alt=""></div>
+                    <div class="info">
+                        <h3>One Page Theme</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize2 animate" data-anim-type="fadeInRight" data-anim-delay="500">
+            <div class="onlycolor">
+
+                <h3>Mega Menu</h3>
+
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize3 animate" data-anim-type="zoomIn" data-anim-delay="600">
+            <div class="onlycolor white">
+
+                <h3 class="darkc">Tons of Features &amp; Elements</h3>
+
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize1 animate" data-anim-type="fadeInDown" data-anim-delay="500">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/html5.jpg') }}" alt=""></div>
+                    <div class="info">
+                        <h3>Video Backgrounds</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+    </div><!-- end center items -->
+
+
+    <div class="right">
+
+        <div class="boxsize4 animate" data-anim-type="fadeInUp" data-anim-delay="600">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/sql4.jpg') }}" alt=""></div>
+                    <div class="info">
+                        <h3>7 Different Header Styles</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize2 animate" data-anim-type="fadeInUp" data-anim-delay="500">
+            <div class="onlycolor white">
+
+                <img src="/bundles/app/images/conductor.jpg" alt="conductorguy">
+
+            </div>
+        </div><!-- end item -->
+
+        <div class="boxsize2 animate" data-anim-type="zoomIn" data-anim-delay="500">
+            <div class="hp-item square effect10 bottom_to_top">
+                <a href="#">
+                    <div class="img"><img src="{{ asset('bundles/app/images/javascript2.jpg') }}" alt=""></div>
+                    <div class="info">
+                        <h3>Coming Soon Page</h3>
+                    </div>
+                </a>
+            </div>
+        </div><!-- end item -->
+
+    </div><!-- end right items -->
 {% endblock %}
